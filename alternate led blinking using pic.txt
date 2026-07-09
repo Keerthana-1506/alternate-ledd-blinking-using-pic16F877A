@@ -1,0 +1,13 @@
+#include<pic.h>
+#define_xtal_FREQ 20000000
+void main()
+{
+TRISC=0x00;//portc pins rc0-rc7(o/p pins)0-o/p pin,1-i/p pin
+while(1)//infinite loop
+{
+PORTC=0x55;//sends 01010101 to portc alternate leds(rc0,rc2,rc4,rc6)turn on
+delay_ms(500);
+PORTC=0xAA;//blinks rc1,rc3,rc5,rc7
+delay_ms(500);
+}
+}
